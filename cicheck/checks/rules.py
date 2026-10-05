@@ -27,7 +27,7 @@ _SECRET_PATTERNS = [
 ]
 
 # --- images ------------------------------------------------------------------
-# image: name[:tag]  — flag missing tag or :latest, allow @sha256 digests and
+# image: name[:tag]  - flag missing tag or :latest, allow @sha256 digests and
 # variable-based names.
 _IMAGE_RE = re.compile(r"(?m)^\s*(?:-\s*)?image\s*:\s*[\"']?([^\"'\s#]+)")
 
