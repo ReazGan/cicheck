@@ -1,0 +1,34 @@
+[project]
+name = "cicheck"
+version = "0.1.0"
+description = "Security linter for non-GitHub CI pipelines: GitLab CI, CircleCI, Azure Pipelines, Bitbucket, Drone, Travis."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Baran Ayaztas" }]
+keywords = ["ci", "cicd", "security", "gitlab-ci", "circleci", "azure-pipelines",
+            "static-analysis", "devsecops", "cli", "linter"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+]
+dependencies = ["click>=8.1", "rich>=13.7", "PyYAML>=6.0"]
+
+[project.urls]
+Homepage = "https://github.com/ReazGan/cicheck"
+Issues = "https://github.com/ReazGan/cicheck/issues"
+
+[project.scripts]
+cicheck = "cicheck.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["cicheck*"]
