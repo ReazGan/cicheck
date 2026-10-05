@@ -1,0 +1,22 @@
+name: cicheck
+description: Security linter for non-GitHub CI pipelines.
+branding:
+  icon: git-branch
+  color: gray-dark
+inputs:
+  path:
+    description: Path to scan.
+    default: "."
+  fail-on:
+    description: Lowest severity that fails the job.
+    default: high
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
+    - shell: bash
+      run: pip install cicheck
+    - shell: bash
+      run: cicheck "${{ inputs.path }}" --fail-on "${{ inputs.fail-on }}"

@@ -1,0 +1,7 @@
+- id: cicheck
+  name: cicheck (CI pipeline security)
+  description: Security linter for non-GitHub CI pipelines.
+  entry: cicheck
+  language: python
+  pass_filenames: false
+  always_run: true
